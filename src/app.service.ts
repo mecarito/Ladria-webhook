@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { SendMessageBody } from './typings';
 import AfricasTalking from 'africastalking';
 import { MongoClient } from 'mongodb';
 
@@ -12,7 +11,7 @@ export class AppService {
   getStatus(): string {
     return 'UP!';
   }
-  async sendMessage(input: SendMessageBody) {
+  async sendMessage(input) {
     // const africastalking = AfricasTalking({
     //   apiKey: process.env.AT_API_KEY,
     //   username: process.env.AT_USERNAME,

@@ -1,6 +1,5 @@
 import { Controller, Get, Post, Body, Res, HttpStatus } from '@nestjs/common';
 import { AppService } from './app.service';
-import { SendMessageBody } from './typings';
 import { Response } from 'express';
 
 @Controller()
