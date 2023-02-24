@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import AfricasTalking from 'africastalking';
 import { MongoClient } from 'mongodb';
 
 @Injectable()
@@ -40,8 +39,7 @@ export class AppService {
     return 'incomming message!';
   }
   async deliveryReports(data: any) {
-    await this.client.connect();
-    console.log('Connected successfully to server');
+    // await this.client.connect();
     const collection = this.db.collection('deliveryReports');
     const res = collection.insertOne(data);
     return res;
