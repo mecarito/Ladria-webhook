@@ -9,7 +9,7 @@ export class SandboxService {
   db = this.client.db(this.dbName);
 
   async incommingMessage(message: IncommingMessage) {
-    const collection = this.db.collection('incomming-messages');
+    const collection = this.db.collection('incoming-messages');
     return await collection.insertOne(message);
   }
   async deliveryReports(message: DeliveryReport) {

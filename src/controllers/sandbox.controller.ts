@@ -7,7 +7,7 @@ import { IncommingMessage, DeliveryReport } from '../types';
 export class SandboxController {
   constructor(private readonly sandboxService: SandboxService) {}
 
-  @Post('incomming-messages')
+  @Post('incoming-messages')
   async incommingMessage(
     @Body() message: IncommingMessage,
     @Res() res: Response,

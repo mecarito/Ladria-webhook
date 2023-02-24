@@ -7,7 +7,7 @@ import { IncommingMessage, DeliveryReport } from '../types';
 export class LiveController {
   constructor(private readonly liveService: LiveService) {}
 
-  @Post('incomming-messages')
+  @Post('incoming-messages')
   async incommingMessage(
     @Body() message: IncommingMessage,
     @Res() res: Response,
