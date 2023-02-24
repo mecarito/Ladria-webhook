@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { MongoClient } from 'mongodb';
+import { IncommingMessage, DeliveryReport } from '../types';
 
 @Injectable()
 export class LiveService {
@@ -7,12 +8,12 @@ export class LiveService {
   dbName = 'live-messages';
   db = this.client.db(this.dbName);
 
-  incommingMessage(): string {
-    return 'incomming message!';
+  async incommingMessage(message: IncommingMessage) {
+    const collection = this.db.collection('incomming-messages');
+    return await collection.insertOne(message);
   }
-  async deliveryReports(data: any) {
+  async deliveryReports(message: DeliveryReport) {
     const collection = this.db.collection('delivery-reports');
-    const res = collection.insertOne(data);
-    return res;
+    return await collection.insertOne(message);
   }
 }
